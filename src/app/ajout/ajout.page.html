@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ajout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding="5px">
+
+
+  <!-- ajout contact-->
+  <div id="blc">
+    <h2>ajouter un contact</h2>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" placeholder="Nom" required="required"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Prénom" required="required"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Fonction" required="required"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="email" placeholder="Email" required="required"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Téléphone" required="required"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button  expand="block" fill="clear" shape="round">
+      Ajouter
+    </ion-button>
+    <ion-button  color="danger" fill="clear" expand="block" shape="round">
+      Annuler
+    </ion-button>
+  </div>
+  <ion-button  expand="block" shape="round">
+    Ajouter un contact
+  </ion-button>
+
+  <!--fin ajout contact-->
+  <!-- ajout mission-->
+  <div id="blc">
+    <h2>ajouter une mission</h2>
+    <ion-card id="card">
+      <ion-item>
+        <ion-input type="text" placeholder="Nom de l'entreprise" required="required">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea  type="text" placeholder="Mission" required="required"></ion-textarea>
+      </ion-item>
+
+
+      <h2 class="h2">Taches:</h2>
+      <ion-card id="addTache" *ngFor="let tache of taches">
+
+        <ion-item-sliding>
+          <ion-item>
+            <p> {{ text }} </p>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="danger">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-card>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Ajouter une tache" [(ngModel)]="myTache" required="required"></ion-input>
+        <ion-button (click)="addTaches()" expand="block" fill="clear" shape="round">
+          <ion-icon slot="end" name="add"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+    </ion-card>
+    <ion-button (click)="addMissions()" expand="block" fill="clear" shape="round">
+      Envoyer
+    </ion-button>
+    <ion-button  color="danger" fill="clear" expand="block" shape="round">
+      Annuler
+    </ion-button>
+  </div>
+  <ion-button (click)="onClick()" expand="block" shape="round">
+    Ajouter une mission
+  </ion-button>
+</ion-content>

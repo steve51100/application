@@ -1,0 +1,43 @@
+ion-content{
+    --ion-background-color: linear-gradient(rgb(25, 129, 133),rgb(3, 3, 3),rgb(34, 117, 128));
+}
+.titre{
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+    text-decoration: underline;
+}
+ion-item{
+    --ion-background-color: white;
+}
+ion-toolbar{
+    display: flex;
+}
+ion-title{
+    text-align: center;
+   
+}
+
+  
+.deco{
+    --ion-background-color: #eb445a;
+    text-transform:initial;
+}
+@media screen and (min-width:675px){
+    ion-card,
+    div{
+       width: 50%;
+       margin: auto;
+       text-align: center;
+
+    }
+    ion-card{
+        margin: auto;
+        margin-top: 30px;
+        --ion-background-color:transparent;
+        img{
+            width: 50%;
+            
+        }
+    }
+}

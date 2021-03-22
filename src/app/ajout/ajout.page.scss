@@ -1,0 +1,46 @@
+ion-header{
+    text-align: center;
+}
+ion-content{
+    --ion-background-color: linear-gradient(rgb(25, 129, 133),rgb(3, 3, 3),rgb(34, 117, 128));
+   
+}
+
+ion-input{
+       color: rgb(0, 0, 0);
+   }
+   ion-item{
+       --ion-background-color: white;
+   }
+.h2{
+    background-color: white;
+}
+#blc{
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    h2{
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+#card{
+    --ion-background-color: white;
+}
+#addTache{
+    --ion-background-color: white;
+    p{
+        text-align: start;
+        margin-left: 20px;
+        color: black;
+        font-size: 1.2em;
+       
+    }
+}
+.style{
+    color: black;
+}

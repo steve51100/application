@@ -1,0 +1,37 @@
+ion-content{
+    --ion-background-color: linear-gradient(rgb(25, 129, 133),rgb(3, 3, 3),rgb(34, 117, 128));
+}
+ion-header,
+ion-footer{
+    text-align: center;
+}
+div{
+    width: 100%;
+    margin-top: 20px;
+   
+    h2{
+        color: rgb(255, 255, 255);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+p{
+    text-align: center;
+    color: white;
+}
+ion-card{
+    --ion-background-color:rgb(255, 255, 255);
+    h2{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+    }
+}
+@media screen and (min-width:675px){
+    ion-card,
+    div{
+       width: 50%;
+       margin: auto;
+
+    }
+}

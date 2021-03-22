@@ -1,0 +1,33 @@
+
+<ion-content>
+   <div class="logo">
+      <ion-icon color="light" name='power'></ion-icon>
+   </div>
+ 
+
+
+
+<div class="padding" >
+  <ion-item>
+    <ion-label position="floating" color="light">Email</ion-label>
+    <ion-input  [(ngModel)]="dataUser.email" color="light" type="email" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" color="light">Mot de passe</ion-label>
+    <ion-input  [(ngModel)]="dataUser.password" color="light" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-item lines='none'>
+    <ion-button slot="end" fill='clear' color="light" >
+      mot de passe oublié ?
+    </ion-button>
+  </ion-item>
+
+  <ion-button (click)="login()" expand="block"  shape="round">
+    Connection
+  </ion-button>
+</div>
+</ion-content>
+
+
