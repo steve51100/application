@@ -12,22 +12,22 @@
     <h2>ajouter un contact</h2>
     <ion-card>
       <ion-item>
-        <ion-input type="text" placeholder="Nom" required="required"></ion-input>
+        <ion-input [(ngModel)]="nom" type="text" placeholder="Nom" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Prénom" required="required"></ion-input>
+        <ion-input [(ngModel)]="prenom" type="text" placeholder="Prénom" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Fonction" required="required"></ion-input>
+        <ion-input [(ngModel)]="fonction" type="text" placeholder="Fonction" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="email" placeholder="Email" required="required"></ion-input>
+        <ion-input [(ngModel)]="email" type="email" placeholder="Email" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Téléphone" required="required"></ion-input>
+        <ion-input [(ngModel)]="telephone" type="text" placeholder="Téléphone" required="required"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-button  expand="block" fill="clear" shape="round">
+    <ion-button (click)="addContactToFirebase()" expand="block" fill="clear" shape="round">
       Ajouter
     </ion-button>
     <ion-button  color="danger" fill="clear" expand="block" shape="round">
