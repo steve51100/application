@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
   {
-    path: 'mission',
+    path: 'mission/:id',
     loadChildren: () => import('./mission/mission.module').then( m => m.MissionPageModule)
   },
   {

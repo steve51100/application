@@ -8,20 +8,15 @@
 </ion-header>
 
 <ion-content>
-  <div><h2>La chouette agence</h2></div>
-  
-
-
-  <div><p>Transfert de la ligne M430</p></div>
-  
-
+  <div><h2>{{mission.entreprise}}</h2></div>
+  <div><p>{{mission.titre}}</p></div>
 
   <div><h2>taches</h2></div>
-  <ion-card>
-    <ion-item lines="none">
-      <ion-checkbox color="success" slot="start"></ion-checkbox>
+  <ion-card *ngFor="let tache of mission.taches">
+    <ion-item lines="none" >
+      <ion-checkbox color="success" slot="start" [(ngModel)]="tache.termine" (ionChange)="updateMission()"></ion-checkbox>
       <ion-label text-wrap>
-        <h2>enlevement du banc de transfert </h2>
+        <h2>{{tache.nom}}</h2>
       </ion-label>
     </ion-item>
   </ion-card>

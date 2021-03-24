@@ -12,22 +12,22 @@
     <h2>ajouter un contact</h2>
     <ion-card>
       <ion-item>
-        <ion-input [(ngModel)]="nom" type="text" placeholder="Nom" required="required"></ion-input>
+        <ion-input type="text" placeholder="Nom" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="prenom" type="text" placeholder="Prénom" required="required"></ion-input>
+        <ion-input type="text" placeholder="Prénom" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="fonction" type="text" placeholder="Fonction" required="required"></ion-input>
+        <ion-input type="text" placeholder="Fonction" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="email" type="email" placeholder="Email" required="required"></ion-input>
+        <ion-input type="email" placeholder="Email" required="required"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="telephone" type="text" placeholder="Téléphone" required="required"></ion-input>
+        <ion-input type="text" placeholder="Téléphone" required="required"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-button (click)="addContactToFirebase()" expand="block" fill="clear" shape="round">
+    <ion-button  expand="block" fill="clear" shape="round">
       Ajouter
     </ion-button>
     <ion-button  color="danger" fill="clear" expand="block" shape="round">
@@ -44,38 +44,38 @@
     <h2>ajouter une mission</h2>
     <ion-card id="card">
       <ion-item>
-        <ion-input type="text" placeholder="Nom de l'entreprise" required="required">
+        <ion-input type="text" placeholder="Nom de l'entreprise" required="required" [(ngModel)]="mission.entreprise">
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-textarea  type="text" placeholder="Mission" required="required"></ion-textarea>
+        <ion-textarea  type="text" placeholder="Mission" required="required" [(ngModel)]="mission.titre"></ion-textarea>
       </ion-item>
 
 
       <h2 class="h2">Taches:</h2>
-      <ion-card id="addTache" *ngFor="let tache of taches">
+      <ion-card id="addTache" *ngFor="let tache of mission.taches">
 
         <ion-item-sliding>
           <ion-item>
-            <p> {{ text }} </p>
+            {{ tache.nom }}
           </ion-item>
           <ion-item-options side="end">
             <ion-item-option color="danger">
-              <ion-icon slot="icon-only" name="trash"></ion-icon>
+              <ion-icon slot="icon-only" name="trash" (click)="supprimerTache(tache)"></ion-icon>
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
       </ion-card>
 
-      <ion-item>
-        <ion-input type="text" placeholder="Ajouter une tache" [(ngModel)]="myTache" required="required"></ion-input>
-        <ion-button (click)="addTaches()" expand="block" fill="clear" shape="round">
+      <ion-item style="padding-bottom: 16px;">
+        <ion-input type="text" placeholder="Ajouter une tache" [(ngModel)]="newTache.nom" required="required"></ion-input>
+        <ion-button (click)="addTache()" expand="block" fill="clear" shape="round">
           <ion-icon slot="end" name="add"></ion-icon>
         </ion-button>
       </ion-item>
 
     </ion-card>
-    <ion-button (click)="addMissions()" expand="block" fill="clear" shape="round">
+    <ion-button (click)="saveMission()" expand="block" fill="clear" shape="round">
       Envoyer
     </ion-button>
     <ion-button  color="danger" fill="clear" expand="block" shape="round">
