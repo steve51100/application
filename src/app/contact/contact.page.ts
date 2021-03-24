@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPage implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
+  }
+
+  navigateBack(){
+    this.navController.back();
   }
 
 }

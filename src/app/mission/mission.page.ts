@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ToastController} from "@ionic/angular";
+import {MissionDataService} from "../services/mission-data.service";
+import {MissionDataModel} from "../models/MissionDataModel";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-mission',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionPage implements OnInit {
 
-  constructor() { }
+  mission:MissionDataModel = new MissionDataModel();
+
+  constructor(private activatedRoute: ActivatedRoute, private missionDataService:MissionDataService) {
+
+  }
 
   ngOnInit() {
+  }
+
+  updateMission() {
+    this.missionDataService.updateMission(this.mission);
+  }
+
+  ionViewWillEnter() {
+    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.missionDataService.getMission(id).subscribe(mission => {
+        this.mission = mission;
+      });
   }
 
 }
