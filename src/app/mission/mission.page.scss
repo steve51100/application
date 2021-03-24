@@ -21,6 +21,7 @@ p{
 }
 ion-card{
     --ion-background-color:rgb(255, 255, 255);
+    
     h2{
         text-transform: uppercase;
         font-weight: bold;
@@ -32,6 +33,7 @@ ion-card{
     div{
        width: 50%;
        margin: auto;
+       margin-top: 20px;
 
     }
 }

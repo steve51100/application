@@ -12,19 +12,25 @@ import {TacheDataModel} from "../models/TacheDataModel";
 })
 export class AjoutPage {
 
+  nom: string;
+  prenom: string;
+  fonction: string;
+  email: string;
+  telephone: string;
+
   newTache:TacheDataModel = {
     nom:'',
     termine:false
   };
   mission:MissionDataModel = new MissionDataModel();
 
-  constructor(public toastController: ToastController, private missionDataService:MissionDataService) {
+  constructor(public toastController: ToastController, private missionDataService:MissionDataService, public afDB: AngularFireDatabase) {
 
   }
 
  addTache(){
    if(this.newTache.nom == ''){
-     this.presentToast("Veuillez entrer le nom de la tache");
+     this.presentToast("Veuillez entrer une tache minimum");
      return;
    }
    this.mission.taches.push(this.newTache);
@@ -63,6 +69,27 @@ export class AjoutPage {
     });
     toast.present();
   }
-
-}
 //ajout element contact
+addContactToFirebase(){
+  this.afDB.list('contact/').push({
+    nom: this.nom,
+    prenom: this.prenom,
+    fonction: this.fonction,
+    email: this.email,
+    telephone: this.telephone
+  });
+    this.nom = "",
+    this.prenom = "",
+    this.fonction = "",
+    this.email = "",
+    this.telephone = ""
+}
+annulerContactToFirebase(){
+  this.nom = "",
+  this.prenom = "",
+  this.fonction = "",
+  this.email = "",
+  this.telephone = ""
+}
+}
+
