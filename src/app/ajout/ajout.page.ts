@@ -20,6 +20,7 @@ export class AjoutPage {
 
   newTache:TacheDataModel = {
     nom:'',
+    date:'',
     termine:false
   };
   mission:MissionDataModel = new MissionDataModel();
@@ -36,6 +37,7 @@ export class AjoutPage {
    this.mission.taches.push(this.newTache);
    this.newTache = {
      nom:'',
+     date:'',
      termine:false
    };
  }

@@ -32,7 +32,7 @@
     <ion-button (click)="addContactToFirebase()" expand="block" fill="clear" shape="round">
       Ajouter
     </ion-button>
-    <ion-button (click)="annulerContactToFirebase()" color="danger" fill="clear" expand="block" shape="round">
+    <ion-button (click)="annulerContactToFirebase()" routerLink="/accueil" color="danger" fill="clear" expand="block" shape="round">
       Annuler
     </ion-button>
   </div>
@@ -84,7 +84,7 @@
     <ion-button (click)="saveMission()" expand="block" fill="clear" shape="round">
       Envoyer
     </ion-button>
-    <ion-button  color="danger" fill="clear" expand="block" shape="round">
+    <ion-button routerLink="/accueil" color="danger" fill="clear" expand="block" shape="round">
       Annuler
     </ion-button>
   </div>

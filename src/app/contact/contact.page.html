@@ -8,13 +8,24 @@
 </ion-header>
 
 <ion-content>
- <ion-card>
-   <div class="blc">
-    <h2>Damien dupond</h2>
-    <p class="p">charger d'affaire industrie</p>
-    <p>dupond.d@hotmail.com</p>
-    <p>0612121212</p>
-   </div>
+ <ion-card *ngFor="let contact of contacts">
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item class="blc" lines="none">
+        <ion-label>
+          <h2>{{ contact.nom }} {{ contact.prenom }}</h2>
+         {{ contact.fonction }}<br/>
+         {{ contact.email }}<br/>
+         {{ contact.telephone }}<br/>
+         </ion-label>
+       </ion-item>
+       <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteContact(contact)">
+          <ion-icon slot="icon-only" name="trash" ></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
  </ion-card>
 </ion-content>
 

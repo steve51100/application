@@ -52,7 +52,7 @@ export class MissionDataService {
 
   // Enregister une mission dans la liste des missions de firestore
   public addMission(mission: MissionDataModel): Promise<DocumentReference> {
-    return this.missionCollection.add({ titre: mission.titre, taches: mission.taches, entreprise:mission.entreprise });
+    return this.missionCollection.add({ titre: mission.titre, taches: mission.taches, entreprise:mission.entreprise, date:mission.date });
   }
 
   // Mettre à jour une mission

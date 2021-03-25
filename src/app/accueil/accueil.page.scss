@@ -1,5 +1,10 @@
 ion-content{
     --ion-background-color: linear-gradient(rgb(25, 129, 133),rgb(3, 3, 3),rgb(34, 117, 128));
+    padding: 5px;
+}
+
+ion-header{
+    display: none;
 }
 .titre{
     color: white;
@@ -9,6 +14,9 @@ ion-content{
 }
 ion-item{
     --ion-background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
 }
 ion-toolbar{
     display: flex;
@@ -16,6 +24,20 @@ ion-toolbar{
 ion-title{
     text-align: center;
    
+}
+ion-card{
+    margin: auto;
+    margin-top: 30px;
+    --ion-background-color:transparent;
+}
+
+ion-label{
+    width: 100%;
+    h2{
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: -15px;
+    }
 }
 
   
@@ -39,5 +61,13 @@ ion-title{
             width: 50%;
             
         }
+    }
+    ion-header{
+        display: block;
+    }
+}
+@media screen and (max-width:674px){
+    ion-item-options{
+        display: none;
     }
 }
